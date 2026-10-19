@@ -20,3 +20,8 @@ app.get("/api/votos", async (rew, res) => {
         res.status(500).json({ error: 'Erro ao buscar os dados de votação.' });
     }
 })
+// Altere a linha da porta para aceitar a porta do Render:
+const PORT = process.env.PORT || 3000;
+
+// Certifique-se de que o app.listen está usando a constante PORT:
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
