@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const app = express();
 const site_apuracao = "https://resultados.tse.jus.br/oficial/app/index.html#/eleicao/6258/uf/br/cargo/1/vis/nominal/resultados";
 
-app.get("/api/votos", async (rew, res) => {
+app.get("/api/votos", async (req, res) => {
     try {
         const { data: html } = await axios.get(site_apuracao);
         const $ = cheerio.load(html);
